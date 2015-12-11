@@ -1,0 +1,57 @@
+<--- Transmitting SIP request (570 bytes) to UDP:195.189.173.27:5060 --->
+REGISTER sip:sip.voipfone.net:5060 SIP/2.0
+Via: SIP/2.0/UDP MY.SERVER.IP.ADDRESS:5060;rport;branch=z9hG4bKPj7a1416be-ee9a-4f78-8b19-4852a5643875
+From: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>;tag=7c194de4-121c-41ba-87df-e475784b7554
+To: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>
+Call-ID: 71eb715b-43f6-4418-98d7-21160aea3f87
+CSeq: 27447 REGISTER
+Contact: <sip:200@MY.SERVER.IP.ADDRESS:5060>
+Expires: 3600
+Allow: OPTIONS, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, REFER, REGISTER, MESSAGE
+Max-Forwards: 70
+User-Agent: Asterisk PBX 13.6.0
+Content-Length:  0
+
+
+<--- Received SIP response (436 bytes) from UDP:195.189.173.27:5060 --->
+SIP/2.0 401 Unauthorized
+Via: SIP/2.0/UDP MY.SERVER.IP.ADDRESS:5060;rport;branch=z9hG4bKPj7a1416be-ee9a-4f78-8b19-4852a5643875
+From: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>;tag=7c194de4-121c-41ba-87df-e475784b7554
+To: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>
+Call-ID: 71eb715b-43f6-4418-98d7-21160aea3f87
+CSeq: 27447 REGISTER
+WWW-Authenticate: Digest realm="asterisk", nonce="XXXXX"
+Min-Expires: 60
+User-Agent: Voipfone
+Content-Length: 0
+
+
+<--- Transmitting SIP request (731 bytes) to UDP:195.189.173.27:5060 --->
+REGISTER sip:sip.voipfone.net:5060 SIP/2.0
+Via: SIP/2.0/UDP MY.SERVER.IP.ADDRESS:5060;rport;branch=z9hG4bKPj53cf774d-fcfc-435d-b29c-1f5f3e13723c
+From: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>;tag=7c194de4-121c-41ba-87df-e475784b7554
+To: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>
+Call-ID: 71eb715b-43f6-4418-98d7-21160aea3f87
+CSeq: 27448 REGISTER
+Contact: <sip:200@MY.SERVER.IP.ADDRESS:5060>
+Expires: 3600
+Allow: OPTIONS, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, REFER, REGISTER, MESSAGE
+Max-Forwards: 70
+User-Agent: Asterisk PBX 13.6.0
+Authorization: Digest username="VOIPFONEACCTNO*200", realm="asterisk", nonce="XXXXX", uri="sip:sip.voipfone.net:5060", response="819241014a496911ec20c84139baa53f"
+Content-Length:  0
+
+
+<--- Received SIP response (464 bytes) from UDP:195.189.173.27:5060 --->
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP MY.SERVER.IP.ADDRESS:5060;rport;branch=z9hG4bKPj53cf774d-fcfc-435d-b29c-1f5f3e13723c
+From: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>;tag=7c194de4-121c-41ba-87df-e475784b7554
+To: <sip:VOIPFONEACCTNO*200@sip.voipfone.net>
+Call-ID: 71eb715b-43f6-4418-98d7-21160aea3f87
+CSeq: 27448 REGISTER
+Contact: <sip:200@MY.SERVER.IP.ADDRESS:5060>;expires=60
+Expires: 60
+Date: Fri, 11 Dec 2005 11:38:57 GMT
+Min-Expires: 60
+User-Agent: Voipfone
+Content-Length: 0
