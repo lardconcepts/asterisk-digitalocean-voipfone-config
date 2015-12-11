@@ -1,0 +1,1 @@
+# asterisk-digitalocean-voipfone-config
