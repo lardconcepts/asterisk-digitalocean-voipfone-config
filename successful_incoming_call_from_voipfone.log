@@ -1,0 +1,109 @@
+<--- Received SIP request (852 bytes) from UDP:195.189.173.27:5060 --->
+INVITE sip:200@MY.SERVER.IP.ADDRESS:5060 SIP/2.0
+Via: SIP/2.0/UDP 195.189.173.27:5060;branch=z9hG4bK023ede0c;rport
+From: "devtest2" <sip:CALLINGNUMBER@195.189.173.27>;tag=VF626403e3ce853a8d1c6b777e2111
+To: <sip:200@MY.SERVER.IP.ADDRESS:5060>
+Contact: <sip:CALLINGNUMBER@195.189.173.27>
+Call-ID: VFaae2a9762c04575c91cea316b983f4@voipfone
+CSeq: 102 INVITE
+User-Agent: Voipfone Sip Network
+Date: Fri, 11 Dec 2005 11:39:53 GMT
+Allow: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER
+Content-Type: application/sdp
+Content-Length: 337
+
+v=0
+o=root 49513 49513 IN IP4 195.189.173.27
+s=session
+c=IN IP4 195.189.173.27
+t=0 0
+m=audio 22550 RTP/AVP 8 2 97 3 110 101
+a=sendrecv
+a=rtpmap:8 PCMA/8000
+a=rtpmap:2 G726-32/8000
+a=rtpmap:97 iLBC/8000
+a=rtpmap:3 GSM/8000
+a=rtpmap:110 speex/8000
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-16
+a=silenceSupp:off - - - -
+
+<--- Transmitting SIP response (351 bytes) to UDP:195.189.173.27:5060 --->
+SIP/2.0 100 Trying
+Via: SIP/2.0/UDP 195.189.173.27:5060;rport=5060;received=195.189.173.27;branch=z9hG4bK023ede0c
+Call-ID: VFaae2a9762c04575c91cea316b983f4@voipfone
+From: "devtest2" <sip:CALLINGNUMBER@195.189.173.27>;tag=VF626403e3ce853a8d1c6b777e2111
+To: <sip:200@MY.SERVER.IP.ADDRESS>
+CSeq: 102 INVITE
+Server: Asterisk PBX 13.6.0
+Content-Length:  0
+
+
+    -- Executing [200@fromvoipfone:1] Answer("PJSIP/voipfone=200-00000003", "") in new stack
+<--- Transmitting SIP response (842 bytes) to UDP:195.189.173.27:5060 --->
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 195.189.173.27:5060;rport=5060;received=195.189.173.27;branch=z9hG4bK023ede0c
+Call-ID: VFaae2a9762c04575c91cea316b983f4@voipfone
+From: "devtest2" <sip:CALLINGNUMBER@195.189.173.27>;tag=VF626403e3ce853a8d1c6b777e2111
+To: <sip:200@MY.SERVER.IP.ADDRESS>;tag=8d7a3947-6eef-45c0-b9c9-65c962a97dd0
+CSeq: 102 INVITE
+Server: Asterisk PBX 13.6.0
+Contact: <sip:MY.SERVER.IP.ADDRESS:5060>
+Allow: OPTIONS, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, REFER, REGISTER, MESSAGE
+Supported: 100rel, timer, replaces, norefersub
+Content-Type: application/sdp
+Content-Length:   227
+
+v=0
+o=- 49513 49515 IN IP4 MY.SERVER.IP.ADDRESS
+s=Asterisk
+c=IN IP4 MY.SERVER.IP.ADDRESS
+t=0 0
+m=audio 15244 RTP/AVP 8 101
+a=rtpmap:8 PCMA/8000
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-16
+a=ptime:20
+a=maxptime:150
+a=sendrecv
+
+<--- Received SIP request (427 bytes) from UDP:195.189.173.27:5060 --->
+ACK sip:MY.SERVER.IP.ADDRESS:5060 SIP/2.0
+Via: SIP/2.0/UDP 195.189.173.27:5060;branch=z9hG4bK5d96dfbf;rport
+From: "devtest2" <sip:CALLINGNUMBER@195.189.173.27>;tag=VF626403e3ce853a8d1c6b777e2111
+To: <sip:200@MY.SERVER.IP.ADDRESS:5060>;tag=8d7a3947-6eef-45c0-b9c9-65c962a97dd0
+Contact: <sip:CALLINGNUMBER@195.189.173.27>
+Call-ID: VFaae2a9762c04575c91cea316b983f4@voipfone
+CSeq: 102 ACK
+User-Agent: Voipfone Sip Network
+Content-Length: 0
+
+
+    -- Executing [200@fromvoipfone:2] Set("PJSIP/voipfone=200-00000003", "CHANNEL(language)=en_GB") in new stack
+    -- Executing [200@fromvoipfone:3] Playback("PJSIP/voipfone=200-00000003", "echo-test") in new stack
+    -- <PJSIP/voipfone=200-00000003> Playing 'echo-test.alaw' (language 'en_GB')
+    -- Executing [200@fromvoipfone:4] Echo("PJSIP/voipfone=200-00000003", "") in new stack
+<--- Received SIP request (427 bytes) from UDP:195.189.173.27:5060 --->
+BYE sip:MY.SERVER.IP.ADDRESS:5060 SIP/2.0
+Via: SIP/2.0/UDP 195.189.173.27:5060;branch=z9hG4bK78c6d03a;rport
+From: "devtest2" <sip:CALLINGNUMBER@195.189.173.27>;tag=VF626403e3ce853a8d1c6b777e2111
+To: <sip:200@MY.SERVER.IP.ADDRESS:5060>;tag=8d7a3947-6eef-45c0-b9c9-65c962a97dd0
+Contact: <sip:CALLINGNUMBER@195.189.173.27>
+Call-ID: VFaae2a9762c04575c91cea316b983f4@voipfone
+CSeq: 103 BYE
+User-Agent: Voipfone Sip Network
+Content-Length: 0
+
+
+<--- Transmitting SIP response (385 bytes) to UDP:195.189.173.27:5060 --->
+SIP/2.0 200 OK
+Via: SIP/2.0/UDP 195.189.173.27:5060;rport=5060;received=195.189.173.27;branch=z9hG4bK78c6d03a
+Call-ID: VFaae2a9762c04575c91cea316b983f4@voipfone
+From: "devtest2" <sip:CALLINGNUMBER@195.189.173.27>;tag=VF626403e3ce853a8d1c6b777e2111
+To: <sip:200@MY.SERVER.IP.ADDRESS>;tag=8d7a3947-6eef-45c0-b9c9-65c962a97dd0
+CSeq: 103 BYE
+Server: Asterisk PBX 13.6.0
+Content-Length:  0
+
+
+  == Spawn extension (fromvoipfone, 200, 4) exited non-zero on 'PJSIP/voipfone=200-00000003'
