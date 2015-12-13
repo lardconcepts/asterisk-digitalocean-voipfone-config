@@ -70,6 +70,10 @@ asterisk
 asterisk -rvvvddd
 ```
 
-Note that asterisk autostarts at boot time, so you'll normally just need `asterisk -rvvvddd`
+Note that asterisk autostarts at boot time, so you'll normally just need `asterisk -rvvvddd`  
 
-Now move onto the 
+## Reconfiguring/rebuilding in the future
+
+    make distclean
+    
+And then start from the `make menuselect` above
