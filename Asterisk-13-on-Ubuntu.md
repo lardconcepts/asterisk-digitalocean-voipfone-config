@@ -1,4 +1,6 @@
-# Installing Asterisk PBX 13.6 on Ubuntu 15.10
+# Installing Asterisk PBX 13.7.2 on Ubuntu 15.10
+
+(With thanks to Peter Wallis for testing and pointing out a couple of things).
 
 ## Get yourself a VPS
 
@@ -11,8 +13,7 @@ Connect via PuTTY. Let's correct the timezone:
 
 ````
 sudo dpkg-reconfigure tzdata
-/etc/init.d/cron stop
-/etc/init.d/cron start
+/etc/init.d/cron restart
 ````
 
 ## Basic security
@@ -43,8 +44,7 @@ cd /usr/src/
 wget http://www.pjsip.org/release/2.4.5/pjproject-2.4.5.tar.bz2
 tar -xjvf pjproject-2.4.5.tar.bz2
 cd pjproject-2.4.5/
-cd ../
-./configure --prefix=/usr --enable-shared --disable-sound --disable-resample --disable-video --disable-opencore-amr CFLAGS='-O2 -DNDEBUG'
+./configure --prefix=/usr --enable-shared --disable-sound --disable-resample --disable-video --disable-opencore-amr 
 make dep && make && make install
 ldconfig
 ldconfig -p | grep pj
