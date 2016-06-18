@@ -77,3 +77,9 @@ Note that asterisk autostarts at boot time, so you'll normally just need `asteri
     make distclean
     
 And then start from the `make menuselect` above
+
+## Hints and Tips
+
+Use the Asterisk Syntax Highliter in Notepad++
+https://github.com/xilitium/Asterisk-Dialplan-Syntax-Highlighting
+http://www.xilitium.com/blog/2/asterisk-dialplan-syntax-highlighting-for-notepad-plus-plus
