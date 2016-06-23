@@ -59,6 +59,7 @@ make menuselect
 
 - go to Add-ons and choose mp3 if required
 - go to channel drivers and deselect sip from the EXTENDED menu below
+- Don't need dahdi unless directly connecting "real" phones to your server
 - Install the extra sounds you want, remember we're in the UK, using G711a, so for example CORE-SOUNDS-EN_GB-ALAW and the extra sounds, too. 
 
 When done, press s to save. Now continue - the first line is the compile - takes a few minutes.
@@ -83,3 +84,5 @@ And then start from the `make menuselect` above
 Use the Asterisk Syntax Highliter in Notepad++
 https://github.com/xilitium/Asterisk-Dialplan-Syntax-Highlighting
 http://www.xilitium.com/blog/2/asterisk-dialplan-syntax-highlighting-for-notepad-plus-plus
+
+
