@@ -16,8 +16,8 @@ EXIF="eth0"
 /sbin/iptables -A INPUT -p tcp -i $EXIF --dport 2525 -m state --state NEW -j ACCEPT
 
 # Allow connections from my machines - first me then voipfone
-/sbin/iptables -A INPUT -p tcp -i $EXIF -m state --state NEW -s 195.189.173.27 -j ACCEPT
-/sbin/iptables -A INPUT -p udp -i $EXIF -m state --state NEW -s 195.189.173.27 -j ACCEPT
+/sbin/iptables -A INPUT -p tcp -i $EXIF -m state --state NEW -s 195.189.172.1/23 -j ACCEPT
+/sbin/iptables -A INPUT -p udp -i $EXIF -m state --state NEW -s 195.189.172.1/23 -j ACCEPT
 
 # Allow icmp input so that people can ping us
 /sbin/iptables -A INPUT -p icmp --icmp-type 8 -m state --state NEW -j ACCEPT
