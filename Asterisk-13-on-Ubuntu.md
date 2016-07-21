@@ -66,7 +66,7 @@ Note that asterisk autostarts at boot time, so you'll normally just need `asteri
     
 ## Firewall!
 
-For basic testing, just make a file called firewall.sh, put [https://github.com/lardconcepts/asterisk-digitalocean-voipfone-config/blob/master/firewall.sh](this) in it, and then `sh firewall.sh`
+For basic testing, just make a file called firewall.sh, put [this](https://github.com/lardconcepts/asterisk-digitalocean-voipfone-config/blob/master/firewall.sh) in it, and then `sh firewall.sh`
 Once you're happy with it, to make it persist after a reboot then  `apt install iptables-persistent`. If you change the rules in the future, then to update, just `sudo iptables-save | sudo tee /etc/iptables/rules.v4`    
     
 And then start from the `make menuselect` above
