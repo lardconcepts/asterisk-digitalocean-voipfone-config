@@ -6,7 +6,7 @@
 
 I'm going to be using a $5/month London-based DigitalOcean droplet here - if you find this guide useful or need a VPS to experiment with, [sign-up via this link](https://www.digitalocean.com/?refcode=3e12153ab02b) and you'll get $10 credit (ie: 2 months) and if you stick around after that, I get a little bonus too!
 
-Fire up a $5/month Ubuntu 15.10 x64 image in the London region.
+Fire up a $5/month Ubuntu 16.04 x64 image in the London region.
 Leave all the other boxes unticked, especially IPv6.
 
 Connect via PuTTY. Let's correct the timezone:
@@ -59,6 +59,8 @@ asterisk -rvvvddd
 ```
 
 Note that asterisk autostarts at boot time, so you'll normally just need `asterisk -rvvvddd`  
+
+Just test things with `reboot`
 
 ## Reconfiguring/rebuilding in the future
 
