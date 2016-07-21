@@ -1,4 +1,4 @@
-# Installing Asterisk PBX 13.7.2 on Ubuntu 15.10
+# Installing Asterisk PBX 13.10 on Ubuntu 16.04
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
 
@@ -24,36 +24,24 @@ replace Port 22 with some other number like Port 2525 and then do `service ssh r
 
 Logout, change the port in PuTTY and log back in. 
 
-link to bash script for iptables
-
 So, connect to your VPS and let's install the basics plus a couple of useful extras:
 
 ## Install Asterisk
 
 Code:
 ```
-sudo apt-get update; sudo apt-get upgrade -y; sudo apt-get dist-upgrade -y; sudo apt-get install -y build-essential git-core pkg-config subversion libjansson-dev sqlite autoconf automake libtool libxml2-dev libncurses5-dev unixodbc unixodbc-dev libasound2-dev libogg-dev libvorbis-dev libneon27-dev libsrtp0-dev libspandsp-dev libmyodbc uuid uuid-dev sqlite3 libsqlite3-dev libgnutls-dev htop iftop silversearcher-ag nmap
-sudo shutdown -r now
+apt update;apt full-upgrade -y
+apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev
 ```
 
 Log back in and continue...
 
-
 ```
-cd /usr/src/
-wget http://www.pjsip.org/release/2.4.5/pjproject-2.4.5.tar.bz2
-tar -xjvf pjproject-2.4.5.tar.bz2
-cd pjproject-2.4.5/
-./configure --prefix=/usr --enable-shared --disable-sound --disable-resample --disable-video --disable-opencore-amr 
-make dep && make && make install
-ldconfig
-ldconfig -p | grep pj
 cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
 tar xvfz asterisk-13-current.tar.gz
 cd asterisk-*
-./configure
-contrib/scripts/get_mp3_source.sh #If you want mp3 support
+./configure --with-pjproject-bundled
 make menuselect
 ```
 
@@ -66,7 +54,6 @@ When done, press s to save. Now continue - the first line is the compile - takes
 
 ```
 make && make install && make config && make samples && make install-logrotate
-ldconfig
 asterisk
 asterisk -rvvvddd
 ```
@@ -76,6 +63,11 @@ Note that asterisk autostarts at boot time, so you'll normally just need `asteri
 ## Reconfiguring/rebuilding in the future
 
     make distclean
+    
+## Firewall!
+
+For basic testing, just make a file called firewall.sh, put [https://github.com/lardconcepts/asterisk-digitalocean-voipfone-config/blob/master/firewall.sh](this) in it, and then `sh firewall.sh`
+Once you're happy with it, to make it persist after a reboot then  `apt install iptables-persistent`. If you change the rules in the future, then to update, just `sudo iptables-save | sudo tee /etc/iptables/rules.v4`    
     
 And then start from the `make menuselect` above
 
