@@ -42,6 +42,7 @@ cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
 tar xvfz asterisk-13-current.tar.gz
 cd asterisk-*
+contrib/scripts/get_mp3_source.sh #If you want mp3 support
 ./configure --with-pjproject-bundled
 make menuselect
 ```
