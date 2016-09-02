@@ -17,8 +17,6 @@ EXIF="eth0"
 # Voipfone
 /sbin/iptables -A INPUT -p tcp -i $EXIF -m state --state NEW -s 195.189.173.0/24 -j ACCEPT
 /sbin/iptables -A INPUT -p udp -i $EXIF -m state --state NEW -s 195.189.173.0/24 -j ACCEPT
-/sbin/iptables -A INPUT -p tcp -i $EXIF -m state --state NEW -s 195.189.172.1/23 -j ACCEPT
-/sbin/iptables -A INPUT -p udp -i $EXIF -m state --state NEW -s 195.189.172.1/23 -j ACCEPT
 /sbin/iptables -A INPUT -p tcp -i $EXIF -m state --state NEW -s 46.31.225.0/24 -j ACCEPT
 /sbin/iptables -A INPUT -p udp -i $EXIF -m state --state NEW -s 46.31.225.0/24 -j ACCEPT
 /sbin/iptables -A INPUT -p tcp -i $EXIF -m state --state NEW -s 46.31.231.0/24 -j ACCEPT
