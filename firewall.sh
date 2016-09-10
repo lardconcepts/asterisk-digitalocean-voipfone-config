@@ -28,3 +28,8 @@ EXIF="eth0"
 # Log then drop any packets that are not allowed. You will probably want to turn off the logging
 # /sbin/iptables -A INPUT -j LOG
 /sbin/iptables -A INPUT -j REJECT
+
+# run it with sh firewall.sh
+# Now save it so that the firewall is active after reboot
+# apt install iptables-persistent
+# sudo iptables-save | sudo tee /etc/iptables/rules.v4
