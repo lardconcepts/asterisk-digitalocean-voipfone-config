@@ -23,4 +23,5 @@ cd /opt/letsencrypt
 ```
 
 TLS is a TCP-based protocol.   You need to open tcp on port 5061 ( assuming you're using this port ) 
-You do not need udp on 5061. 
+You do not need udp on 5061. See 
+See https://github.com/lardconcepts/asterisk-digitalocean-voipfone-config/blob/master/pjsip.conf for an example of how to use tls transport in pjsip.conf
