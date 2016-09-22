@@ -32,7 +32,7 @@ So, connect to your VPS and let's install the basics plus a couple of useful ext
 Code:
 ```
 apt update;apt full-upgrade -y
-apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev
+apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev libcurl4-openssl-dev
 ```
 
 Log back in and continue...
