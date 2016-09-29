@@ -39,7 +39,7 @@ Log back in and continue...
 
 ```
 cd /usr/src
-wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
+wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-14-current.tar.gz
 tar xvfz asterisk-14-current.tar.gz
 cd asterisk-*
 contrib/scripts/get_mp3_source.sh #If you want mp3 support
