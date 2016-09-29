@@ -1,4 +1,4 @@
-# Installing Asterisk PBX 13.11.2 on Ubuntu 16.04
+# Installing Asterisk PBX 14.0.1 on Ubuntu 16.04
 # Now with [video guide](https://youtu.be/h12NkJQwpYo)
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
@@ -40,7 +40,7 @@ Log back in and continue...
 ```
 cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-13-current.tar.gz
-tar xvfz asterisk-13-current.tar.gz
+tar xvfz asterisk-14-current.tar.gz
 cd asterisk-*
 contrib/scripts/get_mp3_source.sh #If you want mp3 support
 ./configure --with-pjproject-bundled
