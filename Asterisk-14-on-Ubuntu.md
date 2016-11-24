@@ -1,4 +1,4 @@
-# Installing Asterisk PBX 14.0.1 on Ubuntu 16.04
+# Installing Asterisk PBX 14.2 on Ubuntu 16.10
 # Now with [video guide](https://youtu.be/h12NkJQwpYo)
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
