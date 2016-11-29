@@ -47,7 +47,7 @@ contrib/scripts/get_mp3_source.sh #If you want mp3 support
 make menuselect
 ```
 
-Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts```. See [this](ttps://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures) for more info.
+Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts```. See [this](https://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures) for more info.
 
     
 
