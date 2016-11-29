@@ -47,13 +47,9 @@ contrib/scripts/get_mp3_source.sh #If you want mp3 support
 make menuselect
 ```
 
-#### If building on a VPS:
+Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts```. See [this](ttps://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures) for more info.
 
-https://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures
-
->Generally, Asterisk attempts to optimize itself for the machine on which it is built on. On some virtual machines with virtual CPU architectures, the defaults chosen by Asterisk's compilation options will cause Asterisk to build but fail to run. To disable native architecture support, disable the BUILD_NATIVE option in menuselect
-
-    menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts
+    
 
 - go to Add-ons and choose mp3 if required
 - go to channel drivers and deselect sip from the EXTENDED menu below
