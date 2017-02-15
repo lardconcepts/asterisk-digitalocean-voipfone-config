@@ -7,7 +7,7 @@
 
 I'm going to be using a $5/month London-based DigitalOcean droplet here - if you find this guide useful or need a VPS to experiment with, [sign-up via this link](https://www.digitalocean.com/?refcode=3e12153ab02b) and you'll get $10 credit (ie: 2 months) and if you stick around after that, I get a little bonus too!
 
-Fire up a $5/month Ubuntu 16.04 x64 image in the London region.
+Fire up a $5/month Ubuntu 16.10 x64 image in the London region.
 Leave all the other boxes unticked, especially IPv6.
 
 Connect via PuTTY. Let's correct the timezone:
@@ -57,6 +57,8 @@ Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE m
 - Install the extra sounds you want, remember we're in the UK, using G711a, so for example CORE-SOUNDS-EN_GB-ALAW and the extra sounds, too. 
 
 When done, press s to save. Now continue - the first line is the compile - takes a few minutes.
+
+**IMPORTANT - if updating and not building for the first time, then replace the first line with just `make && make install` - do not do `make config && make samples` as you will over-write your previous config**
 
 ```
 make && make install && make config && make samples && make install-logrotate
