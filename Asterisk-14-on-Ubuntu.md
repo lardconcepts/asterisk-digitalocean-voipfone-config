@@ -1,4 +1,4 @@
-# Installing Asterisk PBX 14.4 on Ubuntu 17.04
+# Installing Asterisk PBX 15 on Ubuntu 17.10
 # Now with [video guide](https://youtu.be/h12NkJQwpYo)
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
@@ -7,7 +7,7 @@
 
 I'm going to be using a $5/month London-based DigitalOcean droplet here - if you find this guide useful or need a VPS to experiment with, [sign-up via this link](https://www.digitalocean.com/?refcode=3e12153ab02b) and you'll get $10 credit (ie: 2 months) and if you stick around after that, I get a little bonus too!
 
-Fire up a $5/month Ubuntu 16.10 x64 image in the London region.
+Fire up a $5/month Ubuntu 17.10 x64 image in the London region.
 Leave all the other boxes unticked, especially IPv6.
 
 Connect via PuTTY. Let's correct the timezone:
@@ -39,11 +39,11 @@ Log back in and continue...
 
 ```
 cd /usr/src
-wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-14-current.tar.gz
-tar xvfz asterisk-14-current.tar.gz
+wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-15-current.tar.gz
+tar xvfz asterisk-15-current.tar.gz
 cd asterisk-*
 contrib/scripts/get_mp3_source.sh #If you want mp3 support
-./configure --with-pjproject-bundled
+./configure
 make menuselect
 ```
 
@@ -58,10 +58,12 @@ Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE m
 
 When done, press s to save. Now continue - the first line is the compile - takes a few minutes.
 
-**IMPORTANT - if updating and not building for the first time, then replace the first line with just `make && make install` - do not do `make config && make samples` as you will over-write your previous config**
+**IMPORTANT - if updating and not building for the first time, then just `make && make install` - do not do `make config && make samples` as you will over-write your previous config**
 
 ```
-make && make install && make config && make samples && make install-logrotate
+make && make install
+# 
+# make config && make samples && make install-logrotate # do this ONLY first time install!
 asterisk
 asterisk -rvvvddd
 ```
