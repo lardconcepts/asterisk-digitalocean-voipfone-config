@@ -1,4 +1,4 @@
-# Installing Asterisk PBX 15 on Ubuntu 17.10
+# Installing Asterisk PBX 15 on Ubuntu 18.04
 # Now with [video guide](https://youtu.be/h12NkJQwpYo)
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
@@ -7,7 +7,7 @@
 
 I'm going to be using a $5/month London-based DigitalOcean droplet here - if you find this guide useful or need a VPS to experiment with, [sign-up via this link](https://www.digitalocean.com/?refcode=3e12153ab02b) and you'll get $10 credit (ie: 2 months) and if you stick around after that, I get a little bonus too!
 
-Fire up a $5/month Ubuntu 17.10 x64 image in the London region.
+Fire up a $5/month Ubuntu 18.04 x64 image in the London region.
 Leave all the other boxes unticked, especially IPv6.
 
 Connect via PuTTY. Let's correct the timezone:
