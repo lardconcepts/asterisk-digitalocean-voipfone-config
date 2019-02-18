@@ -1,4 +1,4 @@
-# Installing Asterisk PBX 16 on Ubuntu 18.04
+# Installing Asterisk PBX 16.2.0 on Ubuntu 18.04
 # Now with [video guide](https://youtu.be/h12NkJQwpYo)
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
@@ -41,7 +41,7 @@ Log back in and continue...
 cd /usr/src
 wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz
 tar xvfz asterisk-16-current.tar.gz
-cd  "$(\ls -1dt ./*/ | head -n 1)" # cd to directory created just above
+cd  "$(\ls -1dt ./ast*/ | head -n 1)" # cd to directory created just above
 contrib/scripts/get_mp3_source.sh #If you want mp3 support
 ./configure
 make menuselect
