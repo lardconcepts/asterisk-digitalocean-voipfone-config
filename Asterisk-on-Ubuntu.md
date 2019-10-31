@@ -32,6 +32,9 @@ So, connect to your VPS and let's install the basics plus a couple of useful ext
 Code:
 ```
 apt update;apt full-upgrade -y
+```
+
+
 apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev libcurl4-openssl-dev flac libio-socket-ssl-perl libjson-any-perl libedit-dev
 ```
 
@@ -39,9 +42,20 @@ Log back in and continue...
 
 ```
 cd /usr/src
-wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-17-current.tar.gz
-tar xvfz asterisk-17-current.tar.gz
+sudo wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-17-current.tar.gz
+sudo tar xvfz asterisk-17-current.tar.gz
 cd  "$(\ls -1dt ./ast*/ | head -n 1)" # cd to directory created just above
+```
+
+For the FIRST TIME you install Asterisk only
+
+```
+cd contrib/scripts
+sudo ./install_prereq install
+sudo ./install_prereq install-unpackaged # although this seems to fail 
+```
+
+
 contrib/scripts/get_mp3_source.sh #If you want mp3 support
 ./configure
 make menuselect
