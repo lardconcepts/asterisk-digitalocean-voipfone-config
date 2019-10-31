@@ -30,13 +30,12 @@ So, connect to your VPS and let's install the basics plus a couple of useful ext
 ## Install Asterisk
 
 Code:
+
 ```
 apt update;apt full-upgrade -y
 ```
 
 
-apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev libcurl4-openssl-dev flac libio-socket-ssl-perl libjson-any-perl libedit-dev
-```
 
 Log back in and continue...
 
@@ -53,6 +52,9 @@ For the FIRST TIME you install Asterisk only
 cd contrib/scripts
 sudo ./install_prereq install
 sudo ./install_prereq install-unpackaged # although this seems to fail 
+
+# apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev libcurl4-openssl-dev flac libio-socket-ssl-perl libjson-any-perl libedit-dev
+
 ```
 
 
