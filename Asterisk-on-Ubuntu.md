@@ -10,7 +10,13 @@ I'm going to be using a $5/month London-based DigitalOcean droplet here - if you
 Fire up a $5/month Ubuntu 19.10 x64 image in the London region.
 Leave all the other boxes unticked, especially IPv6.
 
-Connect via PuTTY. Let's correct the timezone:
+Connect via PuTTY. 
+
+```
+apt update;apt full-upgrade -y
+```
+
+Let's correct the timezone:
 
 ````
 sudo dpkg-reconfigure tzdata
@@ -29,14 +35,6 @@ So, connect to your VPS and let's install the basics plus a couple of useful ext
 
 ## Install Asterisk
 
-Code:
-
-```
-apt update;apt full-upgrade -y
-```
-
-
-
 Log back in and continue...
 
 ```
@@ -52,15 +50,14 @@ For the FIRST TIME you install Asterisk only
 cd contrib/scripts
 sudo ./install_prereq install
 sudo ./install_prereq install-unpackaged # although this seems to fail 
-
-# apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev libcurl4-openssl-dev flac libio-socket-ssl-perl libjson-any-perl libedit-dev
-
 ```
 
+For subsequent installs
 
-contrib/scripts/get_mp3_source.sh #If you want mp3 support
-./configure
-make menuselect
+```
+sudo contrib/scripts/get_mp3_source.sh #If you want mp3 support
+sudo ./configure
+sudo make menuselect
 ```
 
 Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts```. See [this](https://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures) for more info.
@@ -77,10 +74,11 @@ When done, press s to save. Now continue - the first line is the compile - takes
 **IMPORTANT - if updating and not building for the first time, then just `make && make install` - do not do `make config && make samples` as you will over-write your previous config**
 
 ```
-make && make install
-# 
-# make config && make samples && make install-logrotate # do this ONLY first time install!
-asterisk
+sudo make
+# sudo make config && sudo make samples && sudo make install-logrotate # do this ONLY first time install!
+sudo make install
+# sudo make progdocs # not really needed
+sudo asterisk
 asterisk -rvvvddd
 ```
 
@@ -106,3 +104,8 @@ https://github.com/xilitium/Asterisk-Dialplan-Syntax-Highlighting
 http://www.xilitium.com/blog/2/asterisk-dialplan-syntax-highlighting-for-notepad-plus-plus
 
 
+## Ignore this bit
+
+```
+# apt install build-essential git-core pkg-config subversion autoconf automake libtool libxml2-dev libxslt1-dev libncurses5-dev libneon27-dev libsrtp0-dev uuid uuid-dev libsqlite3-dev libgnutls-dev libjansson-dev libcurl4-openssl-dev flac libio-socket-ssl-perl libjson-any-perl libedit-dev
+```
