@@ -1,16 +1,13 @@
-# Installing Asterisk PBX 17 on Ubuntu 19.10
+# Installing Asterisk PBX 18 on Ubuntu 20.04
 # Now with [video guide](https://youtu.be/h12NkJQwpYo)
 
 (With thanks to Peter Wallis for testing and pointing out a couple of things).
 
 ## Get yourself a VPS
 
-I'm going to be using a $5/month London-based DigitalOcean droplet here - if you find this guide useful or need a VPS to experiment with, [sign-up via this link](https://www.digitalocean.com/?refcode=3e12153ab02b) and you'll get $10 credit (ie: 2 months) and if you stick around after that, I get a little bonus too!
+You can use any small VPS for around $5 per month, but if using Amazon EC2, don't go below t3a small at least while building Asterisk.
 
-Fire up a $5/month Ubuntu 19.10 x64 image in the London region.
-Leave all the other boxes unticked, especially IPv6.
-
-Connect via PuTTY. 
+Connect via shh and then...
 
 ```
 apt update;apt full-upgrade -y
@@ -39,8 +36,8 @@ Log back in and continue...
 
 ```
 cd /usr/src
-sudo wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-17-current.tar.gz
-sudo tar xvfz asterisk-17-current.tar.gz
+sudo wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz
+sudo tar xvfz asterisk-18-current.tar.gz
 cd  "$(\ls -1dt ./ast*/ | head -n 1)" # cd to directory created just above
 ```
 
@@ -57,19 +54,32 @@ For subsequent installs
 ```
 sudo contrib/scripts/get_mp3_source.sh #If you want mp3 support
 sudo ./configure
+```
+
+You have two choices for option selection - the first is the interactive version 
+
+```
 sudo make menuselect
 ```
 
-Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts```. See [this](https://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures) for more info.
-
-    
-
 - go to Add-ons and choose mp3 if required
-- go to channel drivers and deselect sip from the EXTENDED menu below
-- Don't need dahdi unless directly connecting "real" phones to your server
 - Install the extra sounds you want, remember we're in the UK, using G711a, so for example CORE-SOUNDS-EN_GB-ALAW and the extra sounds, too. 
 
 When done, press s to save. Now continue - the first line is the compile - takes a few minutes.
+
+
+
+Alternatively, you can use 100% automated and command line version, if you know what you want. For more details see https://wiki.asterisk.org/wiki/display/AST/Using+Menuselect+to+Select+Asterisk+Options
+
+```
+sudo make menuselect.makeopts
+sudo menuselect/menuselect --enable format_mp3 menuselect/menuselect.makeopts
+```
+
+
+
+Note: If building on a VPS, do ```menuselect/menuselect --disable BUILD_NATIVE menuselect.makeopts```. See [this](https://wiki.asterisk.org/wiki/display/AST/Building+and+Installing+Asterisk#BuildingandInstallingAsterisk-Buildingfornon-nativearchitectures) for more info.
+
 
 **IMPORTANT - if updating and not building for the first time, then just `make && make install` - do not do `make config && make samples` as you will over-write your previous config**
 
